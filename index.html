@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sokour</title>
+<link rel="icon" type="image/png" href="images/sokour.png">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Almarai", sans-serif;
+    background: #ffffff;
+  }
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 30px;
+  background: #ffffff;
+}
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    transition: opacity 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    opacity: 0.6;
+  }
+
+ .logo {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+
+  .contact {
+    font-size: 15px;
+    color: #1a1a1a;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+  }
+
+  .contact:hover {
+    opacity: 0.6;
+  }
+
+  @media (max-width: 700px) {
+    .navbar {
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 20px;
+    }
+    .nav-links {
+      gap: 18px;
+      order: 3;
+      width: 100%;
+      justify-content: center;
+    }
+
+  }
+
+  /* ---------- Hero Section ---------- */
+  .hero {
+    position: relative;
+    min-height: 620px;
+    background-image:
+      linear-gradient(180deg, rgba(8,7,12,0.88) 0%, rgba(8,7,12,0.72) 35%, rgba(8,7,12,0.55) 65%, rgba(8,7,12,0.85) 100%),
+      url('images/hawk man.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-start;
+    padding: 60px 40px;
+}
+
+
+  .hero-content {
+    max-width: 640px;
+    margin-inline-start: auto;
+    text-align: right;
+    padding-top: 40px;
+  }
+
+  .hero-eyebrow {
+    font-size: 13px;
+    color: #cfc9d6;
+    font-weight: 400;
+    margin-bottom: 18px;
+    opacity: 0.85;
+  }
+
+  .hero-title {
+    font-size: 44px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.35;
+    margin-bottom: 22px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+    font-weight: 400;
+    color: #e7e3ec;
+    line-height: 1.9;
+    margin-bottom: 32px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 14px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 26px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.15s ease;
+  }
+
+  .btn:hover {
+    opacity: 0.85;
+  }
+
+  .btn-primary {
+    background: #eeba2b;
+    color: #241a2c;
+    border: none;
+}
+
+  .btn-outline {
+    background: transparent;
+    color: #f2f0f4;
+    border: 1px solid rgba(255,255,255,0.35);
+  }
+
+  @media (max-width: 700px) {
+    .hero {
+      min-height: 480px;
+      padding: 40px 20px;
+      align-items: flex-start;
+    }
+    .hero-content {
+      max-width: 100%;
+      padding-top: 20px;
+    }
+    .hero-title {
+      font-size: 30px;
+    }
+    .hero-description {
+      font-size: 14px;
+    }
+    .hero-actions {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+  }
+
+   /* ---------- About / من لوب Section ---------- */
+  .about {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    background: #F7F4ED;
+    padding: 80px 40px;
+    flex-wrap: wrap;
+  }
+
+  .about-text {
+    flex: 1 1 320px;
+    text-align: right;
+  }
+
+  .about-title {
+    font-size: 40px;
+    font-weight: 800;
+    color: #eeba2b;
+    margin-bottom: 24px;
+  }
+
+  .about-desc {
+    font-size: 15px;
+    line-height: 2.1;
+    color: #241a2c;
+    font-weight: 400;
+  }
+
+  .about-grid {
+    direction: ltr;
+    flex: 1 1 480px;
+    max-width: 560px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 200px 160px 160px;
+    grid-template-areas:
+      "cam   tools  ."
+      "mega  circle mona"
+      "mega  lap2   mona";
+    gap: 16px;
+  }
+
+  .item-cam    { grid-area: cam; }
+  .item-tools  { grid-area: tools; }
+  .item-mega   { grid-area: mega; }
+  .item-mona   { grid-area: mona; }
+  .item-lap2   { grid-area: lap2; }
+
+  .grid-item {
+    background: #3f3f3f;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .about-logo-circle {
+    grid-area: circle;
+    place-self: center;
+    width: 78%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+    .about-logo-circle img {
+    width: 150%;
+    height: 150%;
+    object-fit: contain;
+  }
+
+  @media (max-width: 900px) {
+    .about {
+      flex-direction: column;
+    }
+    .about-text {
+      text-align: right;
+      width: 100%;
+    }
+    .about-grid {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  /* ---------- Mission / Vision / Values Section ---------- */
+  .values-section {
+    background: #0e0d0b;
+    padding: 70px 40px 90px;
+  }
+
+  .mv-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 60px;
+  }
+
+  .mv-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    padding: 34px 30px 60px;
+    text-align: right;
+  }
+
+  .mv-mission {
+    background: #16150f;
+    border: 1px solid rgba(238,186,43,0.22);
+  }
+
+  .mv-vision {
+    background: linear-gradient(135deg, #f3cc5c 0%, #eeba2b 55%, #caa021 100%);
+  }
+
+  .filmstrip {
+    height: 14px;
+    width: 100%;
+    background-image: repeating-linear-gradient(
+      115deg,
+      rgba(238,186,43,0.9) 0 8px,
+      transparent 8px 18px
+    );
+  }
+
+  .mv-vision .filmstrip {
+    background-image: repeating-linear-gradient(
+      115deg,
+      rgba(20,17,10,0.55) 0 8px,
+      transparent 8px 18px
+    );
+  }
+
+  .mv-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 30px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+  }
+
+  .mv-mission .mv-label-row {
+    color: #eeba2b;
+  }
+
+  .mv-vision .mv-label-row {
+    color: #1a1608;
+  }
+
+  .mv-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+
+  .mv-mission .mv-title { color: #eeba2b; }
+  .mv-vision .mv-title { color: #171307; }
+
+  .mv-desc {
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 420px;
+    margin-inline-start: auto;
+  }
+
+  .mv-mission .mv-desc { color: #cfc9be; }
+  .mv-vision .mv-desc { color: #201a09; }
+
+  .mv-number {
+    position: absolute;
+    bottom: -18px;
+    left: 24px;
+    font-size: 90px;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .mv-mission .mv-number { color: rgba(238,186,43,0.12); }
+  .mv-vision .mv-number { color: rgba(23,19,7,0.18); }
+
+  .values-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(238,186,43,0.2);
+    padding-bottom: 18px;
+    margin-bottom: 40px;
+  }
+
+  .values-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #ffffff;
+  }
+
+  .values-sub {
+    font-size: 13px;
+    color: #a29d90;
+  }
+
+  .values-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+    margin-bottom: 50px;
+  }
+
+  .value-item {
+    text-align: right;
+    border-inline-end: 1px solid rgba(238,186,43,0.15);
+    padding-inline-end: 20px;
+  }
+
+  .value-item:last-child {
+    border-inline-end: none;
+  }
+
+  .value-num {
+    display: block;
+    font-size: 12px;
+    color: #eeba2b;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .value-item h4 {
+    font-size: 17px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .value-item p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #9c968a;
+  }
+
+  .quick-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-inline-start: auto;
+    background: #eeba2b;
+    color: #1a1608;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    text-decoration: none;
+    width: fit-content;
+  }
+
+  .quick-contact .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #1a1608;
+  }
+
+  @media (max-width: 900px) {
+    .mv-cards {
+      grid-template-columns: 1fr;
+    }
+    .values-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .value-item {
+      border-inline-end: none;
+      border-bottom: 1px solid rgba(238,186,43,0.15);
+      padding-bottom: 20px;
+    }
+  }
+
+   /* ---------- Services Section ---------- */
+  .services-section {
+    background: #ffffff;
+    padding: 80px 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    border-bottom: 1px solid #eeeeee;
+    flex-wrap: wrap;
+  }
+
+  .services-detail {
+    flex: 1 1 460px;
+    max-width: 560px;
+  }
+
+  .detail-columns {
+    display: flex;
+    justify-content: flex-end;
+    gap: 60px;
+    margin-bottom: 34px;
+  }
+
+  .detail-col {
+    list-style: none;
+    text-align: right;
+  }
+
+  .detail-col li {
+    font-size: 14px;
+    color: #1a1a1a;
+    margin-bottom: 14px;
+  }
+
+  .detail-col li::after {
+    content: "○";
+    font-size: 7px;
+    margin-inline-start: 10px;
+    color: #1a1a1a;
+    vertical-align: middle;
+  }
+
+  .request-btn {
+    display: flex;
+    direction: ltr;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    margin-inline-end: 0;
+    background: transparent;
+    border: 1.5px solid #1a1a1a;
+    color: #1a1a1a;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 13px 26px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .services-list {
+    flex: 1 1 380px;
+    max-width: 480px;
+    text-align: right;
+  }
+
+  .services-title {
+    font-size: 46px;
+    font-weight: 800;
+    color: #eeba2b;
+    margin-bottom: 30px;
+  }
+
+  .services-nav {
+    list-style: none;
+  }
+
+  .service-link {
+    display: flex;
+    direction: ltr;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 16px;
+    color: #b9b9b9;
+    font-weight: 400;
+    cursor: pointer;
+  }
+
+  .service-link .label {
+    flex: 1;
+    text-align: right;
+    direction: rtl;
+  }
+
+  .service-link .arrow {
+    flex-shrink: 0;
+    color: #c7c7c7;
+  }
+
+  .service-link.active {
+    color: #111111;
+    font-weight: 800;
+  }
+
+  .service-link.active .arrow {
+    color: #111111;
+  }
+
+  @media (max-width: 900px) {
+    .services-section {
+      flex-direction: column-reverse;
+    }
+    .detail-columns {
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .services-title {
+      font-size: 34px;
+    }
+  }
+
+    /* ---------- Services Section ---------- */
+  .services-section {
+    background: #ffffff;
+    padding: 80px 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    border-bottom: 1px solid #eeeeee;
+    flex-wrap: wrap;
+  }
+
+  .services-detail {
+    flex: 1 1 460px;
+    max-width: 560px;
+  }
+
+  .detail-columns {
+    display: flex;
+    justify-content: flex-end;
+    gap: 60px;
+    margin-bottom: 34px;
+  }
+
+  .detail-col {
+    list-style: none;
+    text-align: right;
+  }
+
+  .detail-col li {
+    font-size: 14px;
+    color: #1a1a1a;
+    margin-bottom: 14px;
+  }
+
+  .detail-col li::after {
+    content: "○";
+    font-size: 7px;
+    margin-inline-start: 10px;
+    color: #1a1a1a;
+    vertical-align: middle;
+  }
+
+  .request-btn {
+    display: flex;
+    direction: ltr;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    margin-inline-end: 0;
+    background: transparent;
+    border: 1.5px solid #1a1a1a;
+    color: #1a1a1a;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 13px 26px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .services-list {
+    flex: 1 1 380px;
+    max-width: 480px;
+    text-align: right;
+  }
+
+  .services-title {
+    font-size: 46px;
+    font-weight: 800;
+    color: #eeba2b;
+    margin-bottom: 30px;
+  }
+
+  .services-nav {
+    list-style: none;
+  }
+
+  .service-link {
+    display: flex;
+    direction: ltr;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 16px;
+    color: #b9b9b9;
+    font-weight: 400;
+    cursor: pointer;
+  }
+
+  .service-link .label {
+    flex: 1;
+    text-align: right;
+    direction: rtl;
+  }
+
+  .service-link .arrow {
+    flex-shrink: 0;
+    color: #c7c7c7;
+  }
+
+  .service-link.active {
+    color: #111111;
+    font-weight: 800;
+  }
+
+  .service-link.active .arrow {
+    color: #111111;
+  }
+
+  @media (max-width: 900px) {
+    .services-section {
+      flex-direction: column-reverse;
+    }
+    .detail-columns {
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .services-title {
+      font-size: 34px;
+    }
+  }
+
+
+/* ---------- CTA Section ---------- */
+  .cta-section {
+    position: relative;
+    background-image:
+      linear-gradient(180deg, rgba(5,4,3,0.55) 0%, rgba(5,4,3,0.3) 40%, rgba(5,4,3,0.6) 100%),
+      url('images/hawk man 2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 110px 40px;
+  }
+
+  .cta-card {
+    background: linear-gradient(135deg, #f3cc5c 0%, #eeba2b 55%, #caa021 100%);
+    border-radius: 28px;
+    max-width: 760px;
+    width: 100%;
+    padding: 44px 60px 50px;
+    text-align: center;
+  }
+
+  .cta-top-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #4a3c14;
+    letter-spacing: 0.5px;
+    margin-bottom: 40px;
+  }
+
+  .cta-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #171307;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .cta-desc {
+    font-size: 14px;
+    color: #33280e;
+    line-height: 1.9;
+    margin-bottom: 30px;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: #111111;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 15px 40px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 18px;
+    font-family: inherit;
+  }
+
+  .cta-direct {
+    font-size: 13px;
+    color: #33280e;
+  }
+
+  .cta-direct a {
+    color: #111111;
+    font-weight: 700;
+    text-decoration: underline;
+    margin-inline-start: 8px;
+  }
+
+  @media (max-width: 600px) {
+    .cta-card {
+      padding: 34px 26px 40px;
+    }
+    .cta-title {
+      font-size: 21px;
+    }
+  }
+
+  /* ---------- Footer ---------- */
+  .site-footer {
+    background: #0a0a0a;
+    color: #d8d8d8;
+    padding: 50px 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    text-align: right;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 1px;
+  }
+
+  .footer-logo span {
+    color: #eeba2b;
+  }
+
+  .footer-tagline {
+    font-size: 11px;
+    color: #8a8a8a;
+    max-width: 200px;
+  }
+
+  .footer-col h4 {
+    font-size: 13px;
+    color: #8a8a8a;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .footer-col p,
+  .footer-col a {
+    display: block;
+    font-size: 13px;
+    color: #d8d8d8;
+    line-height: 2;
+    text-decoration: none;
+  }
+
+  .footer-follow h4 {
+    font-size: 13px;
+    color: #8a8a8a;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 10px;
+  }
+
+  .footer-social a {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #eeba2b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111111;
+    flex-shrink: 0;
+  }
+
+  .footer-social svg {
+    width: 16px;
+    height: 16px;
+    fill: #111111;
+  }
+
+  @media (max-width: 900px) {
+    .site-footer {
+      flex-direction: column;
+    }
+  }
+</style>
+
+
+</head>
+<body>
+
+      <nav class="navbar">
+    <a href="#" class="contact">تواصل معنا</a>
+
+    <ul class="nav-links">
+      <li><a href="#"> اعمالنا </a></li>
+      <li><a href="#">خدماتنا</a></li>
+      <li><a href="#">من صقور</a></li>
+    </ul>
+
+        <img class"logo" src="images/sokour.png" alt="Sokour Logo" class="logo">
+
+  </nav>
+
+     <section class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">تحت رعايه المركز الاعلامى لاتحاد بشبابها - وزاره الشباب و الرياضه</p>
+      <h1 class="hero-title">صنّاع المحتوى والحدث</h1>
+      <p class="hero-description">
+        منظومة إعلامية متكاملة في مصر تجمع بين الإنتاج السينمائي، تنظيم الفعاليات، ورصد وتحليل البيانات لدعم قراراتك.
+ثماني سنوات في الميدان، نحول أفكارك ورؤيتك إلى برامج، إعلانات، وتقارير دقيقة تصنع الأثر لأبرز الأسماء في مصر.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary">احجز موعد معنا</a>
+        <a href="#" class="btn btn-outline">أرسل استفسارك</a>
+      </div>
+    </div>
+  </section> 
+    
+  <section class="about">
+    <div class="about-text">
+      <h2 class="about-title">من صقور؟</h2>
+      <p class="about-desc">
+وكالة إنتاج وإعلام مصري رائدة تجمع بين الفن والإستراتيجية لتقديم خدمات متكاملة تحت مظلة المركز الإعلامي لوزارة الشباب. في صقور نؤمن بأن "الرصد والدقة" هما مفتاح النجاح في عالم الإعلام المتسارع، ونسعى جاهدين لتحويل أفكارك إلى أفلام، برامج، وفاعليات متميزة تعكس رؤيتك وتحقق أهدافك.      </p>
+    </div>
+
+<div class="about-grid">
+
+ 
+  <div class="grid-item item-mega">
+    <img src="images/3.png" alt="">
+  </div>
+  <div class="about-logo-circle">
+    <img src="images/sokour.png" alt="Sokour Logo">
+  </div>
+  <div class="grid-item item-mona">
+    <img src="images/2.png" alt="">
+  </div>
+  <div class="grid-item item-lap2">
+    <img src="images/4.png" alt="">
+  </div>
+</div>
+  </section>
+
+  <section class="values-section">
+    <div class="mv-cards">
+      <div class="mv-card mv-mission">
+        <div class="filmstrip"></div>
+        <div class="mv-label-row">
+          <span>MISSION</span>
+          <span>SCOPE MEDIA</span>
+        </div>
+        <h3 class="mv-title">الرسالة</h3>
+        <p class="mv-desc">
+          تقديم إنتاج سينمائي وحملات إعلامية متكاملة قائمة على الرصد والدقة والتنفيذ الاحترافي، لتمكين المبادرات والفعاليات من صناعة أثر حقيقي ومستدام.</p>
+        <span class="mv-number">02</span>
+      </div>
+
+      <div class="mv-card mv-vision">
+        <div class="filmstrip"></div>
+        <div class="mv-label-row">
+          <span>VISION</span>
+          <span>SCOPE MEDIA</span>
+        </div>
+        <h3 class="mv-title">الرؤية</h3>
+        <p class="mv-desc">
+أن نكون الذراع الإعلامي والإنتاجي الرائد في صناعة المحتوى المرئي، التغطيات الميدانية، والرصد الإستراتيجي بمصر.        </p>
+        <span class="mv-number">01</span>
+      </div>
+    </div>
+
+    <div class="values-header">
+      <span class="values-sub">خمس لحظات تصنع أسلوبنا</span>
+      <h2 class="values-title">قيمنا</h2>
+    </div>
+
+    <div class="values-list">
+      <div class="value-item">
+        <span class="value-num">01</span>
+        <h4>الإبداع</h4>
+        <p>لا نكتفي بالتغطية التقليدية، بل نبحث عن القصة الحقيقية التي تبني الصورة الذهنية المشرقة.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-num">02</span>
+        <h4>الجودة</h4>
+        <p>نراقب ونحلل كل تفصيلة من الرصد وحتى التنفيذ لنقدم محتوى موثوقاً يلمسه المتابعون.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-num">03</span>
+        <h4>الابتكار</h4>
+        <p>نستكشف زوايا إبداعية جديدة في التوثيق وصناعة المحتوى تبعدنا عن التكرار وتصنع الفارق.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-num">04</span>
+        <h4>التميز</h4>
+        <p>نصنع المعيار في التغطيات الصحفية والإنتاج السينمائي والبرامجي لترك أثر حيوي لا يُنسى.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-num">05</span>
+        <h4>الاحترافية</h4>
+        <p>نُسخّر خبرتنا الميدانية الممتدة لثماني سنوات في إدارة الفعاليات والإنتاج لتقديم أعلى المخرجات الإعلامية.</p>
+      </div>
+    </div>
+
+    <a href="#" class="quick-contact">
+      <span class="dot"></span>
+      تواصل سريع
+    </a>
+  </section>
+
+
+  
+  <section class="services-section">
+    <div class="services-detail">
+      <div class="detail-columns">
+        <ul class="detail-col" id="detail-col-right">
+          <li>التخطيط والإدارة والتنفيذ</li>
+          <li>تحليل الأداء وإعداد التقارير الدورية</li>
+          <li>بناء وتنفيذ الاستراتيجية</li>
+          <li>صياغة محركات البحث SEO</li>
+        </ul>
+        <ul class="detail-col" id="detail-col-left">
+          <li>اختيار القنوات المناسبة</li>
+          <li>كتابة المحتوى ونشره</li>
+          <li>إدارة حسابات التواصل الإجتماعي</li>
+          <li>إختيار المؤثرين الأنسب للحملات</li>
+        </ul>
+      </div>
+      <button class="request-btn">
+        <span>أطلب الخدمة</span>
+        <span>↗</span>
+      </button>
+    </div>
+
+    <div class="services-list">
+      <h2 class="services-title">خدماتنا</h2>
+      <ul class="services-nav" id="services-nav">
+        <li class="service-link" data-index="0">
+          <span class="label">تطوير العلامة التجارية</span>
+          <span class="arrow">←</span>
+        </li>
+        <li class="service-link active" data-index="1">
+          <span class="label">الحملات التسويقية و الإعلانية</span>
+          <span class="arrow">←</span>
+        </li>
+        <li class="service-link" data-index="2">
+          <span class="label">الإنتاج الإبداعي</span>
+          <span class="arrow">←</span>
+        </li>
+        <li class="service-link" data-index="3">
+          <span class="label">إدارة التواصل الإجتماعي</span>
+          <span class="arrow">←</span>
+        </li>
+        <li class="service-link" data-index="4">
+          <span class="label">إدارة وتنظيم الفعاليات</span>
+          <span class="arrow">←</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-card">
+      <div class="cta-top-row">
+        <span>SOKOUR .EG</span>
+        <span>— تقريباً</span>
+      </div>
+      <h2 class="cta-title">
+        كل قصة تبدأ من نبض الشارع لتبني حلم المستقبل، وكل حدث يستحق أن يُرصد ويُروى برؤية إعلامية تصنع الفارق.</h2>
+      <p class="cta-desc">
+        في صقور، نبث محتوى يعبر عن طموحك، يصل لجمهورك، ويحول رسالتك إلى قصة حية تُحكى.</p>
+      <button class="cta-btn">تواصل معنا</button>
+      <p class="cta-direct">
+        أو تواصل مباشرة
+        <a href="tel:0557334167">055 733 4167</a>
+        <a href="#">واتساب</a>
+      </p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <div class="footer-logo"> <span>صقور</span></div>
+      <p class="footer-tagline">للإنتاج المرئي والحلول الإعلامية المتكاملة</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>العنوان</h4>
+      <p>52582 - طريق الملك عبدالعزيز</p>
+      <p>حي الجزيرة بريدة - القصيم</p>
+      <p>المملكة العربية السعودية</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>أوقات العمل</h4>
+      <p>الأحد - الخميس</p>
+      <p>8:00 صباحاً - 4:00 مساءً</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>تواصل</h4>
+      <p>055 733 4167</p>
+      <p>info@scopemedia.sa</p>
+      <p>@scopemedia.sa</p>
+    </div>
+
+    <div class="footer-follow">
+      <h4>تابعنا</h4>
+      <div class="footer-social">
+        <a href="#" aria-label="X">
+          <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-6.7L4.5 22H1.4l8.1-9.3L1 2h7.1l4.9 6.1L18.9 2zm-1.2 18h1.9L7.4 3.9H5.4L17.7 20z"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7 0h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05C19.5 8 21 10.2 21 13.9V23h-4v-8.1c0-1.93-.03-4.4-2.68-4.4-2.68 0-3.09 2.1-3.09 4.27V23h-4V8z"/></svg>
+        </a>
+        <a href="#" aria-label="TikTok">
+          <svg viewBox="0 0 24 24"><path d="M16.6 3c.5 2 1.9 3.5 4 3.9v3.1c-1.5 0-2.9-.5-4-1.3v6.6c0 3.4-2.7 6.1-6.1 6.1S4.4 18.7 4.4 15.3c0-3.3 2.6-6 5.9-6.1v3.2c-1.6.1-2.9 1.4-2.9 3 0 1.6 1.4 3 3 3s3-1.3 3-3V3h3.2z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2 .24 2.4.4.6.24 1 .5 1.5 1 .4.4.7.9 1 1.5.2.4.3 1.2.4 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 2-.4 2.4-.3.6-.6 1-1 1.5-.5.4-1 .7-1.5 1-.4.2-1.2.3-2.4.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.2-2.4-.4-.6-.3-1-.6-1.5-1-.4-.5-.7-1-1-1.5-.2-.4-.3-1.2-.4-2.4C1.2 15.6 1.2 15.2 1.2 12s0-3.6.1-4.9c.1-1.2.2-2 .4-2.4.3-.6.6-1 1-1.5.5-.4 1-.7 1.5-1 .4-.2 1.2-.3 2.4-.4C7.9 2.2 8.3 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.07-1 .05-1.6.2-1.9.35-.5.2-.8.4-1.2.8-.4.4-.6.7-.8 1.2-.15.3-.3.9-.35 1.9C3 9.5 3 9.9 3 13c0 3.1 0 3.5.07 4.7.05 1 .2 1.6.35 1.9.2.5.4.8.8 1.2.4.4.7.6 1.2.8.3.15.9.3 1.9.35 1.2.07 1.6.07 4.7.07s3.5 0 4.7-.07c1-.05 1.6-.2 1.9-.35.5-.2.8-.4 1.2-.8.4-.4.6-.7.8-1.2.15-.3.3-.9.35-1.9.07-1.2.07-1.6.07-4.7s0-3.5-.07-4.7c-.05-1-.2-1.6-.35-1.9-.2-.5-.4-.8-.8-1.2-.4-.4-.7-.6-1.2-.8-.3-.15-.9-.3-1.9-.35C15.5 4 15.1 4 12 4zm0 3.5a5.5 5.5 0 110 11 5.5 5.5 0 010-11zm0 1.8a3.7 3.7 0 100 7.4 3.7 3.7 0 000-7.4zm5.7-2a1.3 1.3 0 110 2.6 1.3 1.3 0 010-2.6z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    const servicesData = [
+      {
+        right: ["صناعة فكرة العلامة التجارية", "تطبيقات الهوية المطبوعة والرقمية"],
+        left: ["تصميم الشعارات النصية والرمزية", "دليل استخدام الهوية التجارية"]
+      },
+      {
+        right: ["التخطيط والإدارة والتنفيذ", "تحليل الأداء وإعداد التقارير الدورية", "بناء وتنفيذ الاستراتيجية", "صياغة محركات البحث SEO"],
+        left: ["اختيار القنوات المناسبة", "كتابة المحتوى ونشره", "إدارة حسابات التواصل الإجتماعي", "إختيار المؤثرين الأنسب للحملات"]
+      },
+      {
+        right: ["إعداد المحتوى الإبداعي", "خدمات التصوير الفوتوغرافي و الفيديو"],
+        left: ["خدمات التعليق والانتاج الصوتي", "تصميم ومونتاج الفيديو"]
+      },
+      {
+        right: ["إعادة ضبط وتنسيق البروفايل", "إدارة الحسابات"],
+        left: ["كتابة المحتوى والنشر", "الردود والمتابعة مع العملاء"]
+      },
+      {
+        right: ["تنظيم المعارض والمؤتمرات", "حلول الكوادر البشرية"],
+        left: ["إدارة الفعاليات", "تغطية إعلامية"]
+      }
+    ];
+
+    const navLinks = document.querySelectorAll("#services-nav .service-link");
+    const rightCol = document.getElementById("detail-col-right");
+    const leftCol = document.getElementById("detail-col-left");
+
+    function renderService(index) {
+      const data = servicesData[index];
+      rightCol.innerHTML = data.right.map(item => `<li>${item}</li>`).join("");
+      leftCol.innerHTML = data.left.map(item => `<li>${item}</li>`).join("");
+
+      navLinks.forEach(link => {
+        link.classList.toggle("active", link.dataset.index === String(index));
+      });
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        renderService(Number(link.dataset.index));
+      });
+    });
+  </script>
+
+
+</body>
+</html>
